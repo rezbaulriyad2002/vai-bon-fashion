@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VAI BON FASHION</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {box-sizing:border-box; margin:0; padding:0;}
+body {font-family: Arial,sans-serif; background:#f5f5f5; scroll-behavior:smooth;}
+header.hero {
+    background: linear-gradient(to right,#000,#434343);
+    color:white; padding:60px 20px; text-align:center;
+}
+header.hero h1{font-size:2.8rem;}
+.shop-btn {
+    display:inline-block; margin-top:20px; padding:12px 30px;
+    background:gold; color:black; text-decoration:none; font-weight:bold; border-radius:30px;
+    transition:0.3s;
+}
+.shop-btn:hover{background:white; color:black;}
+nav {background:#222; text-align:center; padding:10px; position:sticky; top:0; z-index:100;}
+nav a {color:white; text-decoration:none; margin:0 15px; font-weight:bold;}
+nav a:hover{color:gold;}
+section {background:white; margin:20px; padding:30px; border-radius:10px;}
+section h2{margin-bottom:20px; text-align:center;}
+.products {display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px;}
+.product {border-radius:10px; padding:15px; text-align:center; background:#fafafa; box-shadow:0 5px 10px rgba(0,0,0,0.1); transition:0.3s;}
+.product:hover{transform:translateY(-5px);}
+.product img {width:100%; height:220px; object-fit:cover; border-radius:8px;}
+.order-now-btn {
+    display:inline-block; margin-top:10px; padding:10px 20px;
+    background:#28a745; color:white; text-decoration:none; border-radius:20px;
+    font-weight:bold; cursor:pointer; transition:0.3s;
+}
+.order-now-btn:hover{background:#218838;}
+footer {background:#111; color:white; text-align:center; padding:15px;}
+/* Modal */
+.modal {display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; overflow:auto; background:rgba(0,0,0,0.6);}
+.modal-content {background:#fff; margin:10% auto; padding:20px; border-radius:10px; width:90%; max-width:400px; position:relative;}
+.close {position:absolute; right:15px; top:10px; font-size:25px; font-weight:bold; cursor:pointer;}
+.modal input, .modal textarea {width:100%; padding:10px; margin:10px 0;}
+.modal button {width:100%; padding:12px; background:#28a745; color:white; border:none; font-size:16px; cursor:pointer; border-radius:10px;}
+.modal button:hover {background:#218838;}
+@media(max-width:600px){
+    header.hero h1{font-size:2rem;}
+    nav a{display:block; margin:5px 0;}
+    .product img{height:180px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+<h1>VAI BON FASHION</h1>
+<p>Stylish & Affordable Clothing</p>
+<a href="#men" class="shop-btn">Shop Now</a>
+</header>
+
+<nav>
+<a href="#men">Men</a>
+<a href="#women">Women</a>
+<a href="#kids">Kids</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<!-- MEN SECTION -->
+<section id="men">
+<h2>Men's Collection</h2>
+<div class="products">
+  <!-- 10 Men's demo products -->
+  <div class="product"><img src="https://scontent.fdac24-1.fna.fbcdn.net/v/t39.30808-6/474623773_590261267203209_4780253570317722675_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGGzfcjtEMBgfTSvxO76eX3cf7B5k3464px_sHmTfjrivtXzJNMLBG3gTbgtQ4v7VEt7yC3KplnUrU438Xt6ILH&_nc_ohc=DPf5uz1WVKIQ7kNvwHVgeRp&_nc_oc=Adm5wruhHNEdIuj-Z6HYjy1X-lOfIaJQIDs4EtJmVB2uCJAzenXQ4LzFaIuN1uJbE5Y&_nc_zt=23&_nc_ht=scontent.fdac24-1.fna&_nc_gid=kSFFW8E1QflcRAvKerTomA&oh=00_Afm65LRDEF4UGdULwGuY7IRm5OZqC0aGbxd7GMA3C9R2Sg&oe=6950C7CF"><h3>Men's shirt</h3><p>৳600</p><button class="order-now-btn" data-product="Men Product 1" data-price="1200">Order Now</button></div>
+  <div class="product"><img src="https://scontent.fdac24-5.fna.fbcdn.net/v/t39.30808-6/475036790_590261403869862_8304272163635924609_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGXN711RurtujoJnc8DNVXQKv5pyIdrZ_8q_mnIh2tn_0H3FyF5JT8AUY1xOhlzqvjyZYRBbhsKiXaiIxMUrqAS&_nc_ohc=GZHEdKn2c-oQ7kNvwHrCz-z&_nc_oc=AdllClFav5L5r5NT-tQsBiUwp0zVvq2srxJE-vmV1JcV6pxLlxxzca3HaZpOQotRiz0&_nc_zt=23&_nc_ht=scontent.fdac24-5.fna&_nc_gid=kSFFW8E1QflcRAvKerTomA&oh=00_AfnKIUmt-4uTg_HKUqHqvAtUJzeE_oOYRQswqKQ0X3c_yg&oe=6950E6A2"><h3>Men's shirt</h3><p>৳600</p><button class="order-now-btn" data-product="Men Product 2" data-price="1300">Order Now</button></div>
+  <div class="product"><img src="https://scontent.fdac198-1.fna.fbcdn.net/v/t39.30808-6/474625380_590261630536506_1385529053484937016_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGT9iwuo2imgCvNmh00dDlJdLhYaVH0ORd0uFhpUfQ5F1MbPsT054HVJvtuMgPjf0Vej8bAv4uPX5QMxCyaX14T&_nc_ohc=KCPdb1i-j_4Q7kNvwFQFKXx&_nc_oc=Adnth2qxZsYwz1WgNyPqTM1-9AQf5JtqNHC2goIPz2r3suFcUljWrsItdQpkcHKm9zs&_nc_zt=23&_nc_ht=scontent.fdac198-1.fna&_nc_gid=6dxrn4ay7oSJKcT61RUwkw&oh=00_AflHCxNfxmWcj-xEE5ybDo1kRhzF5WFYY41w1CQrn-SQJA&oe=6950D6D8"><h3>Men's shirt</h3><p>৳600</p><button class="order-now-btn" data-product="Men Product 3" data-price="1400">Order Now</button></div>
+  <div class="product"><img src="https://scontent.fdac198-1.fna.fbcdn.net/v/t39.30808-6/474622911_590261237203212_6088627056149758191_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHAyJkALeIrNBWCzQss5to4P7G2_ZFLc0U_sbb9kUtzRYd78z3YBx418r_-MgTMMRSnsHWkCb28MTwviDtPhLdu&_nc_ohc=mOwbVsKSZjgQ7kNvwFwNDWA&_nc_oc=AdktjuQ68gngYHxdP3nx0oCJFdvp3DB53KcGE6lyQub946OTmmMLHr8lApTRLw-mJwU&_nc_zt=23&_nc_ht=scontent.fdac198-1.fna&_nc_gid=Dwoww35xMqr01gyCKMCIew&oh=00_AfkWSxQb5lGOVTuiN_pqwstFn0s7HcIJi1hR6xj3TM_bPQ&oe=6950B71B"><h3>Men's shirt</h3><p>৳600</p><button class="order-now-btn" data-product="Men Product 4" data-price="1250">Order Now</button></div>
+  <div class="product"><img src="https://scontent.fdac198-1.fna.fbcdn.net/v/t39.30808-6/474534378_590261553869847_6148643338030243370_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFI-7qNo8NO7dCTjLeOnjtBCvB5DMNton0K8HkMw22ifQuz_VH6meyRWzAkWfncQ3iU_Vu5KdCeMMyrehbRzjxe&_nc_ohc=RbU-NBNklCUQ7kNvwHVgUP8&_nc_oc=AdnIk-Ad9uRa84tALA-12jyJT-t5QxZ7XCro-P1233cJi3rpm04yPAfE-rSjlfJjpPc&_nc_zt=23&_nc_ht=scontent.fdac198-1.fna&_nc_gid=b0M6Ly_idPnxONPBKb4lEw&oh=00_AfkB9cIpuu9_651cg1f-ece1qwgiX0Ynu978yHBGg-olQw&oe=6950E814"><h3>Men's shirt</h3><p>৳600</p><button class="order-now-btn" data-product="Men Product 5" data-price="1350">Order Now</button></div>
+  <div class="product"><img src="https://scontent.fdac198-2.fna.fbcdn.net/v/t39.30808-6/474788616_590261370536532_7557445741422980261_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHzfMPUTpbs3Ph4tWTjNHce7JYcZYkd5fjslhxliR3l-BqgaeNxeWDiDMkGZea26aPlbimVfZVhL_il8QRHxJA4&_nc_ohc=G7qvCxhmSEwQ7kNvwFrwxJZ&_nc_oc=AdlInzdv9SNTYSEtc7H-917EplWKpIbud8tcnHvpce4nHJmFvSS-ixnF4kgmOpklg_E&_nc_zt=23&_nc_ht=scontent.fdac198-2.fna&_nc_gid=zkgvkFzgYn11MMGkaGk2VA&oh=00_AfkfFraaO244_83Zq4Ruxo4AgFAW3OCJxnR4hxQxJKs0pw&oe=6950E3BE"><h3>Men's shirt</h3><p>৳600</p><button class="order-now-btn" data-product="Men Product 6" data-price="1500">Order Now</button></div>
+  <div class="product"><img src="https://scontent.fdac24-2.fna.fbcdn.net/v/t39.30808-6/474586699_590261633869839_6968622871313893386_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEueLVg92OZEnd7G_4MLGVNYHZq-gXfsgpgdmr6Bd-yCk3oUtmJpLaZFtWFEpj3caN7oePuK4nkD7rS496x3kcu&_nc_ohc=29qQdacMw1wQ7kNvwFFk8e8&_nc_oc=AdkvdR9AMJNZdbHfG-1tNS6GPaRfRuqYt2bJv1cnuLwbTN4BJ96VZhMhWqz3n_7TQq8&_nc_zt=23&_nc_ht=scontent.fdac24-2.fna&_nc_gid=oGYK1ccd7uVcQLyMEIECeA&oh=00_Afk-redWYpcw9NVMAUFASodluMq5uhvz7cHjdK3yvvY6dw&oe=6950E296"><h3>Men's shirt</h3><p>৳600</p><button class="order-now-btn" data-product="Men Product 7" data-price="1600">Order Now</button></div>
+  <div class="product"><img src="https://scontent.fdac24-5.fna.fbcdn.net/v/t39.30808-6/474625982_590261687203167_7529314178261457273_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFgI-fsSDKzYlUs0kcdouItydrcr-ipNSrJ2tyv6Kk1Kqq_k7jSUmmiR1K55y_OYiPP5cFUqABhdrszUnJRhy3E&_nc_ohc=NR41A2fVxqgQ7kNvwHO9sKI&_nc_oc=Adm60_tvKa0u9yf9NTaXJTN51wDICYyNP2hANJJGa_6CO89mokiXEmUEDjVu6qoZ35w&_nc_zt=23&_nc_ht=scontent.fdac24-5.fna&_nc_gid=a6w0nWwcFG0Qh2xqlGjaKg&oh=00_AfmTl6D7OjoSvB_2oqcFTBY9fdADoBXN-ppKcZ0JImO4DA&oe=6950C2C7"><h3>Men's shirt</h3><p>৳600</p><button class="order-now-btn" data-product="Men Product 8" data-price="1550">Order Now</button></div>
+  <div class="product"><img src="https://scontent.fdac198-1.fna.fbcdn.net/v/t39.30808-6/474584470_590261590536510_4953173638618842970_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGQkkg58zSa2e8dWnDK1fAQ30vuyzMDwTXfS-7LMwPBNQ_9NakqV14RvKsI6ElNw1KEnG8BmQz7E7xP6HMrivQ4&_nc_ohc=TBIbQuWA-eoQ7kNvwEVio-Z&_nc_oc=Adl5Z9qzcBYHWFrSFBcAY3fDAjb3yHro0gL9urkhIVuE1PtmnPRfzKCt4bAZlNhNYsM&_nc_zt=23&_nc_ht=scontent.fdac198-1.fna&_nc_gid=LAU6vZmQul-czK42mnTVnQ&oh=00_AfnrpGx4jYkR1rK9Z5ytwkbEMYoc8Urg2DBd6dCFZAz7aA&oe=6950C767"><h3>Men's shirt</h3><p>৳600</p><button class="order-now-btn" data-product="Men Product 9" data-price="1450">Order Now</button></div>
+  <div class="product"><img src="https://scontent.fdac24-5.fna.fbcdn.net/v/t39.30808-6/474588225_590261677203168_6087171783711146363_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeG3gmFEsyIP2rsbpJxSQKB2EU7Bm6e55ooRTsGbp7nmihzSgtABmZRAsqzySpzooT4arMJyGoRwhmgJSxeZisCd&_nc_ohc=4vU8C4w-oSQQ7kNvwGBDPHF&_nc_oc=Adlo9gUjXfgSv3TWe0D0eRx2gzA97HGiPOaCxvZMbtMBEYfJWNdmlWIeCEK88bXl3w4&_nc_zt=23&_nc_ht=scontent.fdac24-5.fna&_nc_gid=oYnD5R_iGEx2R_X1y-BrPA&oh=00_AfkfOULEaKXm3mijvxLyDpXxepumKJVNiZOl0jE0yFh3bA&oe=6950B681"><h3>Men's shirt</h3><p>৳600</p><button class="order-now-btn" data-product="Men Product 10" data-price="1500">Order Now</button></div>
+</div>
+</section>
+
+<!-- WOMEN SECTION -->
+<section id="women">
+<h2>Women's Collection</h2>
+<div class="products">
+  <div class="product"><img src="https://via.placeholder.com/220x220?text=Women+1"><h3>Women Product 1</h3><p>৳1800</p><button class="order-now-btn" data-product="Women Product 1" data-price="1800">Order Now</button></div>
+  <div class="product"><img src="https://via.placeholder.com/220x220?text=Women+2"><h3>Women Product 2</h3><p>৳1850</p><button class="order-now-btn" data-product="Women Product 2" data-price="1850">Order Now</button></div>
+  <div class="product"><img src="https://via.placeholder.com/220x220?text=Women+3"><h3>Women Product 3</h3><p>৳1900</p><button class="order-now-btn" data-product="Women Product 3" data-price="1900">Order Now</button></div>
+  <div class="product"><img src="https://via.placeholder.com/220x220?text=Women+4"><h3>Women Product 4</h3><p>৳1950</p><button class="order-now-btn" data-product="Women Product 4" data-price="1950">Order Now</button></div>
+  <div class="product"><img src="https://via.placeholder.com/220x220?text=Women+5"><h3>Women Product 5</h3><p>৳2000</p><button class="order-now-btn" data-product="Women Product 5" data-price="2000">Order Now</button></div>
+  <div class="product"><img src="https://via.placeholder.com/220x220?text=Women+6"><h3>Women Product 6</h3><p>৳2100</p><button class="order-now-btn" data-product="Women Product 6" data-price="2100">Order Now</button></div>
+  <div class="product"><img src="https://via.placeholder.com/220x220?text=Women+7"><h3>Women Product 7</h3><p>৳2200</p><button class="order-now-btn" data-product="Women Product 7" data-price="2200">Order Now</button></div>
+  <div class="product"><img src="https://via.placeholder.com/220x220?text=Women+8"><h3>Women Product 8</h3><p>৳2250</p><button class="order-now-btn" data-product="Women Product 8" data-price="2250">Order Now</button></div>
+  <div class="product"><img src="https://via.placeholder.com/220x220?text=Women+9"><h3>Women Product 9</h3><p>৳2300</p><button class="order-now-btn" data-product="Women Product 9" data-price="2300">Order Now</button></div>
+  <div class="product"><img src="https://via.placeholder.com/220x220?text=Women+10"><h3>Women Product 10</h3><p>৳2350</p><button class="order-now-btn" data-product="Women Product 10" data-price="2350">Order Now</button></div>
+</div>
+</section>
+
+<!-- KIDS SECTION -->
+<section id="kids">
+<h2>Kids Collection</h2>
+<div class="products">
+  <div class="product"><img src="https://via.placeholder.com/220x220?text=Kids+1"><h3>Kids Product 1</h3><p>৳800</p><button class="order-now-btn" data-product="Kids Product 1" data-price="800">Order Now</button></div>
+  <div class="product"><img src="https://via.placeholder.com/220x220?text=Kids+2"><h3>Kids Product 2</h3><p>৳850</p><button class="order-now-btn" data-product="Kids Product 2" data-price="850">Order Now</button></div>
+  <div class="product"><img src="https://via.placeholder.com/220x220?text=Kids+3"><h3>Kids Product 3</h3><p>৳900</p><button class="order-now-btn" data-product="Kids Product 3" data-price="900">Order Now</button></div>
+  <div class="product"><img src="https://via.placeholder.com/220x220?text=Kids+4"><h3>Kids Product 4</h3><p>৳950</p><button class="order-now-btn" data-product="Kids Product 4" data-price="950">Order Now</button></div>
+  <div class="product"><img src="https://via.placeholder.com/220x220?text=Kids+5"><h3>Kids Product 5</h3><p>৳1000</p><button class="order-now-btn" data-product="Kids Product 5" data-price="1000">Order Now</button></div>
+  <div class="product"><img src="https://via.placeholder.com/220x220?text=Kids+6"><h3>Kids Product 6</h3><p>৳1050</p><button class="order-now-btn" data-product="Kids Product 6" data-price="1050">Order Now</button></div>
+  <div class="product"><img src="https://via.placeholder.com/220x220?text=Kids+7"><h3>Kids Product 7</h3><p>৳1100</p><button class="order-now-btn" data-product="Kids Product 7" data-price="1100">Order Now</button></div>
+  <div class="product"><img src="https://via.placeholder.com/220x220?text=Kids+8"><h3>Kids Product 8</h3><p>৳1150</p><button class="order-now-btn" data-product="Kids Product 8" data-price="1150">Order Now</button></div>
+  <div class="product"><img src="https://via.placeholder.com/220x220?text=Kids+9"><h3>Kids Product 9</h3><p>৳1200</p><button class="order-now-btn" data-product="Kids Product 9" data-price="1200">Order Now</button></div>
+  <div class="product"><img src="https://via.placeholder.com/220x220?text=Kids+10"><h3>Kids Product 10</h3><p>৳1250</p><button class="order-now-btn" data-product="Kids Product 10" data-price="1250">Order Now</button></div>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p>📞 Phone: 01751331550</p>
+<p>📧 Email: vaibonfashion@gmail.com</p>
+<p>📍 Gaibandha, Rangpur, Bangladesh</p>
+</section>
+
+<footer>
+<p>© 2025 VAI BON FASHION</p>
+</footer>
+
+<!-- Modal -->
+<div id="orderModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3 id="modalProduct"></h3>
+    <input type="text" id="customerName" placeholder="Your Name" required>
+    <input type="text" id="customerPhone" placeholder="Phone Number" required>
+    <input type="number" id="customerQty" placeholder="Quantity" required>
+    <textarea id="customerAddress" placeholder="Delivery Address" rows="3" required></textarea>
+    <button id="submitOrder">Submit Order</button>
+  </div>
+</div>
+
+<script>
+const modal = document.getElementById("orderModal");
+const closeBtn = document.querySelector(".close");
+let selectedProduct = '';
+let selectedPrice = '';
+const whatsappNumber = "8801834209908"; // your WhatsApp number
+
+document.querySelectorAll('.order-now-btn').forEach(btn=>{
+    btn.addEventListener('click', function(){
+        selectedProduct = this.getAttribute('data-product');
+        selectedPrice = this.getAttribute('data-price');
+        document.getElementById('modalProduct').innerText = selectedProduct + " - ৳" + selectedPrice;
+        modal.style.display = "block";
+    });
+});
+
+closeBtn.onclick = () => modal.style.display = "none";
+window.onclick = e => {if(e.target==modal) modal.style.display="none";}
+
+document.getElementById('submitOrder').addEventListener('click', function(){
+    const name = document.getElementById('customerName').value.trim();
+    const phone = document.getElementById('customerPhone').value.trim();
+    const qty = document.getElementById('customerQty').value.trim();
+    const addr = document.getElementById('customerAddress').value.trim();
+    if(!name||!phone||!qty||!addr){alert("Please fill all fields!"); return;}
+    const message = `Hello! I want to order:\nProduct: ${selectedProduct}\nPrice: ৳${selectedPrice}\nQuantity: ${qty}\nName: ${name}\nPhone: ${phone}\nAddress: ${addr}`;
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL,'_blank');
+    modal.style.display="none";
+});
+</script>
+
+</body>
+</html>
